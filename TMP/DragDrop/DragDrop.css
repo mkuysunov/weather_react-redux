@@ -1,0 +1,4 @@
+.dragdrop-elem:hover {
+    cursor: move;
+    background-color: green;
+}

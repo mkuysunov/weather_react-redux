@@ -1,0 +1,69 @@
+.header-container {
+  background: url('../../assets/Mask-Group1.jpg') no-repeat calc(100% + 50px) 0;
+}
+
+.order-card {
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+
+.order-card h1 {
+  font-family: "Montserrat",sans-serif;
+  font-weight: 800;
+  font-size: 43px;
+  color: #3f3f3f;
+}
+
+@media screen and (max-width: 1199.98px) {
+  .order-card h1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .header-container {
+    background-position: center top ;
+  }
+  .order-card {
+    padding-top: 400px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .header-container {
+    background-size: contain;
+  }
+  .order-card  {
+    padding-top: 350px;
+    transition: .3s;
+  }
+  .order-card h1 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .order-card  {
+    padding-top: 300px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .order-card  {
+    padding-top: 250px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .order-card  {
+    padding-top: 200px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .order-card  {
+    padding-top: 150px;
+  }
+}
