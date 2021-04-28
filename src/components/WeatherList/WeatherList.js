@@ -42,7 +42,7 @@ const useStyle = makeStyles((theme) => {
 })
 
 export function WeatherList() {
-  const list = useSelector((state) => state.data.list, shallowEqual)
+  const list = useSelector((state) => state.list, shallowEqual)
   const classes = useStyle()
 
   const memoList = useMemo(() => {

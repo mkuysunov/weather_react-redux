@@ -52,10 +52,13 @@ export function changeData(url) {
           },
         })
       ).json()
+
       if (res.cod !== '200') {
         throw new Error(res.message)
       }
-      dispatch({ type: CHANGE_DATA, payload: res })
+
+      const { list, city } = res
+      dispatch({ type: CHANGE_DATA, payload: { list, city } })
     } catch (error) {
       dispatch(errorSwitcher(error.message))
     }

@@ -12,7 +12,6 @@ import weatherIcon from '../../assets/weather_aimated/weather.svg'
 import LinearProgress from '@material-ui/core/LinearProgress'
 
 const useStyles = makeStyles((theme) => {
-  console.log(theme)
   return {
     root: {
       background: theme.palette.common.white,

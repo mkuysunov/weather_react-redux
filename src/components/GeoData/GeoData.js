@@ -107,7 +107,7 @@ const useStyle = makeStyles((theme) => ({
 }))
 
 export function GeoData() {
-  const city = useSelector((state) => state.data.city, shallowEqual)
+  const city = useSelector((state) => state.city, shallowEqual)
   const classes = useStyle()
 
   if (!city) {
@@ -136,8 +136,6 @@ export function GeoData() {
       date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
     }`
   }
-
-  console.log(city)
 
   // RENDER
   return (
