@@ -8,7 +8,5 @@ Link for looking demo [weather-e50.web.app](https://weather-e50.web.app/)
 
 ## Demo image
 
-![demo image](https://github.com/mkuysunov/weather_react-redux/blob/main/TMP/project-pic.PNG/200/300?style=centerme)
-
-
+<img align="left" width="600" height="200" src="https://github.com/mkuysunov/weather_react-redux/blob/main/TMP/project-pic.PNG">
 
