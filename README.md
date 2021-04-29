@@ -1,8 +1,14 @@
-## Weather - project
+## Weather 
 
-created by react, redux, Mui, <br />
+```
+ This project was created for the purpose of learning react-redux, firebase (hosting) and markdown.
+ You can see the rest of the frameworks on package.json.
+```
+Link for looking demo [weather-e50.web.app](https://weather-e50.web.app/)
 
-[link for looking](https://weather-e50.web.app/). <br />
+## Demo image
 
-![project demo picture](https://github.com/mkuysunov/weather_react-redux/blob/main/TMP/project-pic.PNG)
+![demo image](https://github.com/mkuysunov/weather_react-redux/blob/main/TMP/project-pic.PNG)
+
+
 
