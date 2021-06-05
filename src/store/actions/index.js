@@ -1,6 +1,5 @@
 export const SEARCH_ONCHANGE = 'SEARCH_ONCHANGE'
-export const CHANGE_DATA = 'CHANGE_DATA'
-export const CHANGE_URL = 'CHANGE_URL'
+export const UPDATE_DATA = 'UPDATE_DATA'
 export const LOADER_SWITCHER = 'LOADER_SWITCHER'
 export const ERROR_SWITCHER = 'ERROR_SWITCHER'
 export const SEARCH_RESET = 'SEARCH_RESET'
@@ -15,13 +14,14 @@ export function searchOnChange(value) {
 export function resetSearch() {
   return {
     type: SEARCH_RESET,
+    payload: {},
   }
 }
 
-export function changeURL(newURL) {
+export function updateData(data) {
   return {
-    type: CHANGE_URL,
-    payload: newURL,
+    type: UPDATE_DATA,
+    payload: { ...data },
   }
 }
 
@@ -39,13 +39,20 @@ export function errorSwitcher(errorState) {
   }
 }
 
-export function changeData(url) {
+export function loadData(searchText) {
   return async function (dispatch) {
+    // validation
+    if (!searchText) {
+      return
+    }
+
+    const url = new URL('https://community-open-weather-map.p.rapidapi.com/forecast')
+    url.searchParams.set('q', searchText)
+
     dispatch(loaderSwitcher(true))
     try {
       const res = await (
-        await fetch(url, {
-          method: 'GET',
+        await fetch(url.href, {
           headers: {
             'x-rapidapi-key': '923777365emshee1435367f16eebp10b70bjsnc6ef88acec9a',
             'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
@@ -56,9 +63,9 @@ export function changeData(url) {
       if (res.cod !== '200') {
         throw new Error(res.message)
       }
-
       const { list, city } = res
-      dispatch({ type: CHANGE_DATA, payload: { list, city } })
+      dispatch(updateData({ list, city }))
+      dispatch(resetSearch())
     } catch (error) {
       dispatch(errorSwitcher(error.message))
     }
